@@ -31,13 +31,12 @@ stages:
     - script: |
         sudo apt-get update
         sudo apt-get install -y python3.10
-        
       workingDirectory: $(projectRoot)
       displayName: 'myStep 1 Install Python3.10'
     
     - script: |
         export PATH=$PATH:/path/to/python3.10
-        python3.10 app.py
+        python3.10 your_script.py
       displayName: 'Run Python Script'
     
     - script: |
