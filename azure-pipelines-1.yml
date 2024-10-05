@@ -22,8 +22,8 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-  # Python version: 3.10
-  pythonVersion: '3.10'
+  # Python version: 3.10.15
+  pythonVersion: '3.10.15'
 
 stages:
 - stage: Build
@@ -81,7 +81,7 @@ stages:
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements - 9"
-      
+
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
