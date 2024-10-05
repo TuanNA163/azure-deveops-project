@@ -39,17 +39,49 @@ stages:
 
     - script: |
         sudo apt install python3
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 1"
+
+    - script: |
         sudo apt-get update
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 2"
+
+    - script: |
         sudo apt-get install -y python3.10 python3.10-dev
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 3"
+
+    - script: |
         sudo apt-get install python3-venv
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 4"
+
+    - script: |
         sudo apt-get install python3-pip
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 5"
+
+    - script: |
         python3 -m venv myenv
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 6"
+
+    - script: |
         source myenv/bin/activate
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 7"
+
+    - script: |
         pip install setup
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements - 8"
+
+    - script: |
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
-      displayName: "Install requirements"
-
+      displayName: "Install requirements - 9"
+      
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
