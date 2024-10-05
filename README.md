@@ -31,7 +31,7 @@
 The output should look similar to this:
 
 ```bash
-odl_user [ ~/azure-deveops-project ]$ ./make_predict_azure_app.sh
+(.mytuanna163env) odl_user [ ~/azure-deveops-project ]$ ./make_predict_azure_app.sh
 Port: 443
 {"prediction":[2.431574790057212]}
 ```
