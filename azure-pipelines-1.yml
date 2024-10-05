@@ -38,12 +38,13 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
 
     - script: |
-        python3 -m venv myenv
-        source myenv/bin/activate
         sudo apt install python3
         sudo apt-get update
+        sudo apt-get install -y python3.10 python3.10-dev
         sudo apt-get install python3-venv
         sudo apt-get install python3-pip
+        python3 -m venv myenv
+        source myenv/bin/activate
         pip install setup
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
