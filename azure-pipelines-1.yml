@@ -36,7 +36,6 @@ stages:
     
     - script: |
         export PATH=$PATH:/path/to/python3.10
-        python3.10 your_script.py
       displayName: 'Run Python Script'
     
     - script: |
